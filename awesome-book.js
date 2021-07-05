@@ -2,26 +2,28 @@ const form  = document.getElementById('book-data');
 const bookTitle = document.querySelector('#book-title');
 const bookAuthor = document.querySelector('#book-author');
 const bookListed = document.querySelector('.book-list')
-bookListed.appendChild(addToPage('Home'));
 
 let Books = [];
 
-function addBook(){
-    var Book = {
-        title: bookTitle.value,
-        author: bookAuthor.value,
-    }
-    Books.push(Book);
-    console.log(Books, Book);
+function addToList(title, author){
+  let li = document.createElement('li');
+  let div = document.createElement('div');
+
+  div.appendChild(title);
+  div.appendChild(author);
+  li.appendChild(div);
+  return li;
 }
 
-function addToPage(content){
-    let li = document.createElement('li');
-    li.textContent=content;
-    return li;
+function addToPage(title, author){
+  let titleBook = document.createElement('p')
+  titleBook.textContent = title;
+  let authorBook = document.createElement('p')
+  authorBook.textContent = title;
+  bookListed.appendChild(addToList(titleBook, authorBook));
 }
 
 form.addEventListener('submit', (event) => {
-    form.submit();
-    addBook();
+    addToPage(bookTitle.value, bookAuthor.value);
+    event.preventDefault();
 });
