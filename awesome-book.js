@@ -3,17 +3,17 @@ const bookTitle = document.querySelector('#book-title');
 const bookAuthor = document.querySelector('#book-author');
 const bookListed = document.querySelector('.book-list');
 let Books = [];
-​
+
 function saveBooks() {
   localStorage.setItem('Books', JSON.stringify(Books));
 }
-​
+
 function removeBooks(title) {
   Books = Books.filter((book) => book.title !== title);
   saveBooks();
   addToList();
 }
-​
+
 function saveBook(author, title) {
   const book = {
     author,
@@ -21,7 +21,7 @@ function saveBook(author, title) {
   };
   Books.push(book);
 }
-​
+
 function addToList() {
   bookListed.innerHTML = '';
   Books.map((book) => {
@@ -44,18 +44,18 @@ function addToList() {
     return book;
   });
 }
-​
+
 function addToPage(title, author) {
   saveBook(author, title);
   addToList();
 }
-​
+
 form.addEventListener('submit', () => {
   addToPage(bookTitle.value, bookAuthor.value);
   saveBooks();
   form.submit();
 });
-​
+
 window.onload = function () {
   Books = JSON.parse(localStorage.getItem('Books') || '[]');
   addToList();
