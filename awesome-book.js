@@ -12,6 +12,7 @@ function saveBook(author, title) {
   const book = {
     author,
     title,
+    id: Books.length + 1,
   };
   Books.push(book);
 }
@@ -28,7 +29,7 @@ function addToList() {
     const btn = document.createElement('button');
     btn.innerHTML = 'REMOVE BOOK';
     btn.addEventListener('click', () => {
-      Books = Books.filter((b) => b.title !== book.title);
+      Books = Books.filter((b) => b.id !== book.id);
       saveBooks();
       addToList();
     });
