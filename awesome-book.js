@@ -2,7 +2,6 @@ const form = document.getElementById('book-data');
 const bookTitle = document.querySelector('#book-title');
 const bookAuthor = document.querySelector('#book-author');
 const bookListed = document.querySelector('.book-list');
-​
 let Books = [];
 ​
 function saveBooks() {
