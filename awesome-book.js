@@ -1,9 +1,18 @@
 const form  = document.getElementById('book-data');
 const bookTitle = document.querySelector('#book-title');
 const bookAuthor = document.querySelector('#book-author');
-const bookListed = document.querySelector('.book-list')
+const bookListed = document.querySelector('.book-list');
+const myBookStorage = window.localStorage;
+
 
 let Books = [];
+Books = Object.entries(myBookStorage);
+
+// function addToList(title, author){
+  
+// }
+
+function addToPage(title, author){
 
 function addToList(){
   bookListed.innerHTML = '';
@@ -44,9 +53,14 @@ function saveBook(author, title){
 function removeBooks(currentDiv, title){
   li = currentDiv.parentNode
   li.remove();
+<<<<<<< HEAD
   Books = Books.filter((book) => book.title !== title);
   saveBooks();
   addToList();
+=======
+  Books=Object.entries(myBookStorage);
+  Storage.removeItem(titleBook, authorBook);
+>>>>>>> e9e79c6eb66f4f8a7107208983b41a15f0d6fbc0
 }
 
 form.addEventListener('submit', (event) => {
@@ -62,4 +76,5 @@ window.onload = function () {
 
 function saveBooks() {
   localStorage.setItem('Books', JSON.stringify(Books));
-};
+}
+}
