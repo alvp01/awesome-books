@@ -19,7 +19,7 @@ function addToList(){
     let btn = document.createElement('button');
     btn.innerHTML = "REMOVE BOOK";
     btn.addEventListener('click', () => {
-      removeBooks(btn.parentNode, book.title);
+      removeBooks(book.title);
     });
     div.appendChild(title);
     div.appendChild(author);
@@ -43,9 +43,7 @@ function saveBook(author, title){
   Books.push(book)
 }
 
-function removeBooks(currentDiv, title){
-  li = currentDiv.parentNode
-  li.remove();
+function removeBooks(title){
   Books = Books.filter((book) => book.title !== title);
   saveBooks();
   addToList();
