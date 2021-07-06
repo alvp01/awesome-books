@@ -1,13 +1,29 @@
-const form  = document.getElementById('book-data');
+const form = document.getElementById('book-data');
 const bookTitle = document.querySelector('#book-title');
 const bookAuthor = document.querySelector('#book-author');
 const bookListed = document.querySelector('.book-list');
-const myBookStorage = window.localStorage;
-
-
+​
 let Books = [];
-
-function addToList(){
+​
+function saveBooks() {
+  localStorage.setItem('Books', JSON.stringify(Books));
+}
+​
+function removeBooks(title) {
+  Books = Books.filter((book) => book.title !== title);
+  saveBooks();
+  addToList();
+}
+​
+function saveBook(author, title) {
+  const book = {
+    author,
+    title,
+  };
+  Books.push(book);
+}
+​
+function addToList() {
   bookListed.innerHTML = '';
   Books.map((book) => {
     const li = document.createElement('li');
@@ -16,8 +32,8 @@ function addToList(){
     title.innerHTML = book.title;
     const author = document.createElement('p');
     author.innerHTML = book.author;
-    let btn = document.createElement('button');
-    btn.innerHTML = "REMOVE BOOK";
+    const btn = document.createElement('button');
+    btn.innerHTML = 'REMOVE BOOK';
     btn.addEventListener('click', () => {
       removeBooks(book.title);
     });
@@ -29,37 +45,19 @@ function addToList(){
     return book;
   });
 }
-
-function addToPage(title, author){
+​
+function addToPage(title, author) {
   saveBook(author, title);
   addToList();
 }
-
-function saveBook(author, title){ 
-  let book = {
-    author: author,
-    title: title
-  }
-  Books.push(book)
-}
-
-function removeBooks(title){
-  Books = Books.filter((book) => book.title !== title);
+​
+form.addEventListener('submit', () => {
+  addToPage(bookTitle.value, bookAuthor.value);
   saveBooks();
-  addToList();
-}
-
-form.addEventListener('submit', (event) => {
-    addToPage(bookTitle.value, bookAuthor.value);
-    saveBooks();
-    form.submit();
+  form.submit();
 });
-
+​
 window.onload = function () {
   Books = JSON.parse(localStorage.getItem('Books') || '[]');
   addToList();
 };
-
-function saveBooks() {
-  localStorage.setItem('Books', JSON.stringify(Books));
-}
