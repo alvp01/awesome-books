@@ -8,12 +8,6 @@ function saveBooks() {
   localStorage.setItem('Books', JSON.stringify(Books));
 }
 
-function removeBooks(title) {
-  Books = Books.filter((book) => book.title !== title);
-  saveBooks();
-  addToList();
-}
-
 function saveBook(author, title) {
   const book = {
     author,
@@ -34,7 +28,9 @@ function addToList() {
     const btn = document.createElement('button');
     btn.innerHTML = 'REMOVE BOOK';
     btn.addEventListener('click', () => {
-      removeBooks(book.title);
+      Books = Books.filter((b) => b.title !== book.title);
+      saveBooks();
+      addToList();
     });
     div.appendChild(title);
     div.appendChild(author);
@@ -56,7 +52,7 @@ form.addEventListener('submit', () => {
   form.submit();
 });
 
-window.onload = function () {
+window.onload = () => {
   Books = JSON.parse(localStorage.getItem('Books') || '[]');
   addToList();
 };
