@@ -1,3 +1,24 @@
+class Library {
+  constructor () {
+    this.books = [];
+  }
+    saveBooks() {  }
+    displayBooks() {  }
+    deleteBooks() {  }
+ 
+}
+
+
+
+class Book {
+  constructor() { ... }
+  method_1() { ... }
+  method_2() { ... }
+  method_3() { ... }
+}
+
+
+
 const form = document.getElementById('book-data');
 const bookTitle = document.querySelector('#book-title');
 const bookAuthor = document.querySelector('#book-author');
