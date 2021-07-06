@@ -17,7 +17,7 @@ function addToList(){
     let btn = document.createElement('button');
     btn.innerHTML = "REMOVE BOOK";
     btn.addEventListener('click', () => {
-      removeBooks(btn.parentNode);
+      removeBooks(btn.parentNode, book.title);
     });
     div.appendChild(title);
     div.appendChild(author);
@@ -41,9 +41,12 @@ function saveBook(author, title){
   Books.push(book)
 }
 
-function removeBooks(btn){
-  li = btn.parentNode
+function removeBooks(currentDiv, title){
+  li = currentDiv.parentNode
   li.remove();
+  Books = Books.filter((book) => book.title !== title);
+  saveBooks();
+  addToList();
 }
 
 form.addEventListener('submit', (event) => {
@@ -53,7 +56,7 @@ form.addEventListener('submit', (event) => {
 });
 
 window.onload = function () {
-  library = JSON.parse(localStorage.getItem('Books') || '[]');
+  Books = JSON.parse(localStorage.getItem('Books') || '[]');
   addToList();
 };
 
