@@ -6,13 +6,6 @@ const myBookStorage = window.localStorage;
 
 
 let Books = [];
-Books = Object.entries(myBookStorage);
-
-// function addToList(title, author){
-  
-// }
-
-function addToPage(title, author){
 
 function addToList(){
   bookListed.innerHTML = '';
@@ -61,7 +54,7 @@ function removeBooks(currentDiv, title){
 form.addEventListener('submit', (event) => {
     addToPage(bookTitle.value, bookAuthor.value);
     saveBooks();
-    event.preventDefault();
+    form.submit();
 });
 
 window.onload = function () {
@@ -71,5 +64,4 @@ window.onload = function () {
 
 function saveBooks() {
   localStorage.setItem('Books', JSON.stringify(Books));
-}
 }
