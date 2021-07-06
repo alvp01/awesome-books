@@ -11,12 +11,14 @@ function addToList(title, author){
   let btn = document.createElement('button');
 
   btn.innerHTML = "REMOVE BOOK";
-
-   btn.onclick = removeBooks();
+  btn.addEventListener('click', () => {
+    removeBooks(btn.parentNode);
+  });
 
   div.appendChild(title);
   div.appendChild(author);
   div.appendChild(btn);
+
   li.appendChild(div);
   return li;
 }
@@ -29,10 +31,9 @@ function addToPage(title, author){
   bookListed.appendChild(addToList(titleBook, authorBook));
 }
 
-function removeBooks(){
-let div = this.parentNode;
-div.remove();
-
+function removeBooks(btn){
+  li = btn.parentNode
+  li.remove();
 }
 
 form.addEventListener('submit', (event) => {
