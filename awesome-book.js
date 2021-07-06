@@ -5,30 +5,40 @@ const bookListed = document.querySelector('.book-list')
 
 let Books = [];
 
-function addToList(title, author){
-  let li = document.createElement('li');
-  let div = document.createElement('div');
-  let btn = document.createElement('button');
-
-  btn.innerHTML = "REMOVE BOOK";
-  btn.addEventListener('click', () => {
-    removeBooks(btn.parentNode);
+function addToList(){
+  bookListed.innerHTML = '';
+  Books.map((book) => {
+    const li = document.createElement('li');
+    const div = document.createElement('div');
+    const title = document.createElement('p');
+    title.innerHTML = book.title;
+    const author = document.createElement('p');
+    author.innerHTML = book.author;
+    let btn = document.createElement('button');
+    btn.innerHTML = "REMOVE BOOK";
+    btn.addEventListener('click', () => {
+      removeBooks(btn.parentNode);
+    });
+    div.appendChild(title);
+    div.appendChild(author);
+    div.appendChild(btn);
+    li.appendChild(div);
+    bookListed.appendChild(li);
+    return book;
   });
-
-  div.appendChild(title);
-  div.appendChild(author);
-  div.appendChild(btn);
-
-  li.appendChild(div);
-  return li;
 }
 
 function addToPage(title, author){
-  let titleBook = document.createElement('p')
-  titleBook.textContent = title;
-  let authorBook = document.createElement('p')
-  authorBook.textContent = author;
-  bookListed.appendChild(addToList(titleBook, authorBook));
+  saveBook(author, title);
+  addToList();
+}
+
+function saveBook(author, title){ 
+  let book = {
+    author: author,
+    title: title
+  }
+  Books.push(book)
 }
 
 function removeBooks(btn){
@@ -38,5 +48,15 @@ function removeBooks(btn){
 
 form.addEventListener('submit', (event) => {
     addToPage(bookTitle.value, bookAuthor.value);
+    saveBooks();
     event.preventDefault();
 });
+
+window.onload = function () {
+  library = JSON.parse(localStorage.getItem('Books') || '[]');
+  addToList();
+};
+
+function saveBooks() {
+  localStorage.setItem('Books', JSON.stringify(Books));
+};
