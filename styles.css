@@ -56,6 +56,13 @@ html {
   cursor: pointer;
 }
 
+.book-list-item {
+  padding: 1.5rem;
+  margin-bottom: 10px;
+  background-color:antiquewhite;
+  
+}
+
 .input-field {
   min-height: 35px;
   border: 1px solid black;
@@ -72,10 +79,9 @@ html {
 
 .book-list {
   list-style: none;
-  border-radius: 15px;
-  border: 1.5px solid black;
-  padding: 0;
-  flex-basis: 100%;
+  border-radius: 8px;
+  border: 3.5px solid black;
+  flex-basis: 70%;
 }
 
 .book-shelf {
