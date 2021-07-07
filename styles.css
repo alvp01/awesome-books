@@ -9,7 +9,7 @@ html {
 *::before,
 *::after {
   box-sizing: inherit;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .flex-column,
