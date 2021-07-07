@@ -18,7 +18,7 @@ class Library {
   displayBooks() {
     bookListed.innerHTML = '';
     this.books.map((book) => {
-      const li = document.createElement('li');
+      const div1 = document.createElement('div');
       const div = document.createElement('div');
       const title = document.createElement('p');
       title.innerHTML = book.title;
@@ -32,8 +32,9 @@ class Library {
       div.appendChild(title);
       div.appendChild(author);
       div.appendChild(btn);
-      li.appendChild(div);
-      bookListed.appendChild(li);
+      div1.appendChild(div);
+      div1.classList.add("book-list-item");
+      bookListed.appendChild(div1);
       return book;
     });
   }
