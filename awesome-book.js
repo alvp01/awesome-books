@@ -27,9 +27,7 @@ class Library {
       const btn = document.createElement('button');
       btn.innerHTML = 'REMOVE BOOK';
       btn.addEventListener('click', () => {
-        this.books = this.books.filter((b) => b.id !== book.id);
-        this.saveBooks();
-        this.displayBooks();
+        this.removeBooks(book);
       });
       div.appendChild(title);
       div.appendChild(author);
@@ -39,7 +37,12 @@ class Library {
       return book;
     });
     }
-    deleteBooks() {  }
+
+    removeBooks(book) {
+      this.books = this.books.filter((b) => b.id !== book.id);
+      this.saveBooks();
+      this.displayBooks();
+    }
 
     addBooks(author, title) { 
       let book = new Book(author, title, this.books.length+1);
@@ -59,50 +62,7 @@ class Book {
 
 let library = new Library();
 const form = document.getElementById('book-data');
-// let Books = [];
 
-// function saveBooks() {
-//   localStorage.setItem('Books', JSON.stringify(Books));
-// }
-
-// function saveBook(author, title) {
-//   const book = {
-//     author,
-//     title,
-//     id: Books.length + 1,
-//   };
-//   Books.push(book);
-// }
-
-// function addToList() {
-//   bookListed.innerHTML = '';
-//   Books.map((book) => {
-//     const li = document.createElement('li');
-//     const div = document.createElement('div');
-//     const title = document.createElement('p');
-//     title.innerHTML = book.title;
-//     const author = document.createElement('p');
-//     author.innerHTML = book.author;
-//     const btn = document.createElement('button');
-//     btn.innerHTML = 'REMOVE BOOK';
-//     btn.addEventListener('click', () => {
-//       Books = Books.filter((b) => b.id !== book.id);
-//       saveBooks();
-//       addToList();
-//     });
-//     div.appendChild(title);
-//     div.appendChild(author);
-//     div.appendChild(btn);
-//     li.appendChild(div);
-//     bookListed.appendChild(li);
-//     return book;
-//   });
-// }
-
-// function addToPage(title, author) {
-//   saveBook(author, title);
-//   addToList();
-// }
 
 form.addEventListener('submit', () => {
   library.addBooks(bookAuthor.value, bookTitle.value);
