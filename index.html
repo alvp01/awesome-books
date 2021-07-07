@@ -8,21 +8,25 @@
   <title>Awesome Books</title>
 </head>
 <body>
-   <div class="container">
+   <div class="container flex-column">
     <h1 class="title-text">Awesome Book!</h1>
-    <section class="row">
-      <h2 class="title-sub-text">Books!</h2>
+    <section class="row flex-row">
+      <h2 class="title-text">Books!</h2>
       <ul class="book-list">
     
       </ul>
     </section>
-    <section class="form-group">
+    <section class="row flex-row">
       <h3 class="title-text">Add books!</h3>
-      <form name="book-data" id="book-data">
-        <label for="book-author">Author:</label>
-        <input type="text" id="book-author" name="book-author" class="input-field" placeholder="Author name">
-        <label for="book-title">Title:</label>
-        <input type="text" id="book-title" name="book-title" class="input-field" placeholder="Book Title">
+      <form name="book-data" id="book-data" class="book-registration flex-column">
+        <div class="input-field flex-row">
+          <label for="book-author">Author:</label>
+          <input type="text" id="book-author" name="book-author" placeholder="Author name">
+        </div>
+        <div class="input-field flex-row">
+          <label for="book-title">Title:</label>
+          <input type="text" id="book-title" name="book-title" placeholder="Book Title">
+        </div>        
         <input class="btn"type="submit" value="submit">
       </form>
     </section>

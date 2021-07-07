@@ -8,30 +8,35 @@ html {
   box-sizing: inherit;
 }
 
+.flex-column,
+.flex-row {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
 .title-text {
   text-align: center;
   color: greenyellow;
+  width: 100%;
 }
 
 .container {
-  display: flex;
   padding: 15px;
   width: 100vw;
 }
 
 .row {
-  display: flex;
-  flex-direction: row;
+  padding: 15px;
   width: 100%;
   justify-content: center;
-}
-
-.title-sub-text {
-  color: greenyellow;
-}
-
-.form-group {
-
+  flex-wrap: wrap;
 }
 
 .btn {
@@ -42,7 +47,7 @@ html {
   height: 42px;
   width: 100px;
   padding: 0.5rem 1rem;
-  border-radius: 2px;
+  border-radius: 10px;
   background-color: yellow;
   border: 1.5px solid transparent;
   font-weight: 400;
@@ -52,6 +57,33 @@ html {
 }
 
 .input-field {
+  min-height: 35px;
+  border: 1px solid black;
   border-radius: 10px;
-  padding-bottom: 10px;
+  margin-bottom: 10px;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.input-field input {
+  border: none;
+}
+
+.book-list {
+  list-style: none;
+  border-radius: 15px;
+  border: 1.5px solid black;
+  padding: 0;
+  flex-basis: 100%;
+}
+
+.book-shelf {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.book-registration {
+  min-width: 400px;
 }
