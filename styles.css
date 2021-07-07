@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@700&family=STIX+Two+Math&display=swap');
 
-
 html {
   box-sizing: border-box;
 }
@@ -10,6 +9,7 @@ html {
 *::before,
 *::after {
   box-sizing: inherit;
+  overflow: hidden;
 }
 
 .flex-column,
@@ -43,7 +43,8 @@ html {
   flex-wrap: wrap;
 }
 
-.btn {
+.btn,
+.remove-btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,22 +60,19 @@ html {
   font-size: 14px;
   transition: ease 0.25s background-color;
   cursor: pointer;
+  align-self: flex-end;
 }
 
 .btn:hover {
   background-color: greenyellow;
 }
 
-.book-list-item {
-  justify-content:space-between;
-  padding: 1.5rem;
-  margin-bottom: 10px;
-  background-color:antiquewhite; 
+.remove-btn:hover {
+  background-color: rgb(226, 129, 90);
 }
 
 .input-field {
   min-height: 35px;
-  border: 1px solid black;
   border-radius: 10px;
   margin-bottom: 10px;
   outline: none;
@@ -84,8 +82,12 @@ html {
   padding-left: 10px;
 }
 
-.input-field input {
+.input-text {
   border: none;
+}
+
+.input-text:focus {
+  outline: none;
 }
 
 .book-list {
@@ -93,7 +95,20 @@ html {
   border-radius: 8px;
   border: 3.5px solid black;
   flex-basis: 70%;
+  min-height: 100px;
 }
+
+.book-list-item {
+  justify-content: space-between;
+  padding: 1.5rem;
+  background-color: antiquewhite;
+  min-height: 100px;
+}
+
+.bg-2 {
+  background-color: rgb(131, 252, 151);
+}
+
 .book-registration {
   min-width: 500px;
 }
