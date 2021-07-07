@@ -57,10 +57,10 @@ html {
 }
 
 .book-list-item {
+  justify-content:space-between;
   padding: 1.5rem;
   margin-bottom: 10px;
-  background-color:antiquewhite;
-  
+  background-color:antiquewhite; 
 }
 
 .input-field {
@@ -83,13 +83,6 @@ html {
   border: 3.5px solid black;
   flex-basis: 70%;
 }
-
-.book-shelf {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-}
-
 .book-registration {
   min-width: 400px;
 }

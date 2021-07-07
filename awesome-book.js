@@ -20,20 +20,18 @@ class Library {
     this.books.map((book) => {
       const div1 = document.createElement('div');
       const div = document.createElement('div');
-      const title = document.createElement('p');
-      title.innerHTML = book.title;
-      const author = document.createElement('p');
-      author.innerHTML = book.author;
+      const p = document.createElement('p');
+      p.innerHTML = book.title;
       const btn = document.createElement('button');
       btn.innerHTML = 'REMOVE BOOK';
       btn.addEventListener('click', () => {
         this.removeBooks(book);
       });
-      div.appendChild(title);
-      div.appendChild(author);
+      div.appendChild(p);
       div.appendChild(btn);
       div1.appendChild(div);
       div1.classList.add("book-list-item");
+      
       bookListed.appendChild(div1);
       return book;
     });
