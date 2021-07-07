@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@700&family=STIX+Two+Math&display=swap');
+
+
 html {
   box-sizing: border-box;
 }
@@ -46,6 +50,7 @@ html {
   text-align: center;
   height: 42px;
   width: 100px;
+  font-family: 'El Messiri', sans-serif;
   padding: 0.5rem 1rem;
   border-radius: 10px;
   background-color: yellow;
@@ -54,6 +59,10 @@ html {
   font-size: 14px;
   transition: ease 0.25s background-color;
   cursor: pointer;
+}
+
+.btn:hover {
+  background-color: greenyellow;
 }
 
 .book-list-item {
@@ -68,8 +77,10 @@ html {
   border: 1px solid black;
   border-radius: 10px;
   margin-bottom: 10px;
+  outline: none;
   justify-content: flex-start;
   align-items: center;
+  border: 2px solid greenyellow;
   padding-left: 10px;
 }
 
@@ -84,5 +95,5 @@ html {
   flex-basis: 70%;
 }
 .book-registration {
-  min-width: 400px;
+  min-width: 500px;
 }
