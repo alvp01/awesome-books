@@ -4,26 +4,26 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./styles.css">
   <title>Awesome Books</title>
 </head>
 <body>
    <div class="container">
-    <h1>Awesome Book!</h1>
-    <section>
-      <h2>Books!</h2>
+    <h1 class="title-text">Awesome Book!</h1>
+    <section class="row">
+      <h2 class="title-sub-text">Books!</h2>
       <ul class="book-list">
     
       </ul>
     </section>
-    <section>
-      <h3>Add books!</h3>
+    <section class="form-group">
+      <h3 class="title-text">Add books!</h3>
       <form name="book-data" id="book-data">
         <label for="book-author">Author:</label>
-        <input type="text" id="book-author" name="book-author">
+        <input type="text" id="book-author" name="book-author" class="input-field" placeholder="Author name">
         <label for="book-title">Title:</label>
-        <input type="text" id="book-title" name="book-title">
-        <input type="submit" value="submit">
+        <input type="text" id="book-title" name="book-title" class="input-field" placeholder="Book Title">
+        <input class="btn"type="submit" value="submit">
       </form>
     </section>
   </div>
