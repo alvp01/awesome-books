@@ -7,3 +7,51 @@ html {
 *::after {
   box-sizing: inherit;
 }
+
+.title-text {
+  text-align: center;
+  color: greenyellow;
+}
+
+.container {
+  display: flex;
+  padding: 15px;
+  width: 100vw;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+}
+
+.title-sub-text {
+  color: greenyellow;
+}
+
+.form-group {
+
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 42px;
+  width: 100px;
+  padding: 0.5rem 1rem;
+  border-radius: 2px;
+  background-color: yellow;
+  border: 1.5px solid transparent;
+  font-weight: 400;
+  font-size: 14px;
+  transition: ease 0.25s background-color;
+  cursor: pointer;
+}
+
+.input-field {
+  border-radius: 10px;
+  padding-bottom: 10px;
+}
