@@ -55,6 +55,16 @@ class Library {
   }
 }
 
+function displayBookList() {
+  const listSection = document.querySelector("#book-display");
+  const formSection = document.querySelector("#book-form-section");
+  const contactSection = document.querySelector("#contact-section");
+
+  listSection.style.display = "flex";
+  formSection.style.display = "none";
+  contactSection.style.display = "none";
+}
+
 const library = new Library();
 const form = document.getElementById('book-data');
 

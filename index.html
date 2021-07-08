@@ -8,14 +8,23 @@
   <title>Awesome Books</title>
 </head>
 <body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#book-display" onclick="return displayBookList();">Home</a></li>
+        <li><a href="#book-form-section" onclick="return displayBookForm();">Add books</a></li>
+        <li><a href="#contact-section" onclick="return displayContact();">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
    <div class="container flex-column">
     <h1 class="title-text">Awesome Book!</h1>
-    <section class="row flex-row">
+    <section class="row flex-row" id="book-display">
       <h2 class="title-text">Books!</h2>
       <div class="book-list">
       </div>
     </section>
-    <section class="row flex-row">
+    <section class="row flex-row" id="book-form-section">
       <h3 class="title-text">Add books!</h3>
       <form name="book-data" id="book-data" class="book-registration flex-column">
         <div class="input-field flex-row">
@@ -29,7 +38,12 @@
         <input class="btn" type="submit" value="submit">
       </form>
     </section>
+    <section class="row flex-row" id="contact-section">
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea, numquam itaque nesciunt, modi rem provident nobis ducimus molestias iste quo ex, necessitatibus porro minima sit dolore ratione est nulla omnis!</p>
+    </section>
   </div>
-  <script src="awesome-book.js"></script>
+  <footer>
+    <script src="awesome-book.js"></script>
+  </footer>
 </body> 
 </html>
