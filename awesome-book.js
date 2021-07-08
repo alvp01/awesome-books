@@ -1,3 +1,17 @@
+/* eslint-disable */
+const { DateTime } = luxon;
+/* eslint-enable */
+const now = DateTime.now().toString();
+const navDate = document.createElement('span');
+navDate.innerHTML = now;
+
+const nav = document.querySelector('#navigation');
+nav.appendChild(navDate);
+
+const homeSection = document.querySelector('#home');
+const bookFormSection = document.querySelector('#add-books');
+const contactSectionObj = document.querySelector('#contact-link');
+
 const bookTitle = document.querySelector('#book-title');
 const bookAuthor = document.querySelector('#book-author');
 const bookListed = document.querySelector('.book-list');
@@ -56,33 +70,33 @@ class Library {
 }
 
 function displayBookList() {
-  const listSection = document.querySelector("#book-display");
-  const formSection = document.querySelector("#book-form-section");
-  const contactSection = document.querySelector("#contact-section");
+  const listSection = document.querySelector('#book-display');
+  const formSection = document.querySelector('#book-form-section');
+  const contactSection = document.querySelector('#contact-section');
 
-  listSection.style.display = "flex";
-  formSection.style.display = "none";
-  contactSection.style.display = "none";
+  listSection.style.display = 'flex';
+  formSection.style.display = 'none';
+  contactSection.style.display = 'none';
 }
 
 function displayBookForm() {
-  const listSection = document.querySelector("#book-display");
-  const formSection = document.querySelector("#book-form-section");
-  const contactSection = document.querySelector("#contact-section");
+  const listSection = document.querySelector('#book-display');
+  const formSection = document.querySelector('#book-form-section');
+  const contactSection = document.querySelector('#contact-section');
 
-  listSection.style.display = "none";
-  formSection.style.display = "flex";
-  contactSection.style.display = "none";
+  listSection.style.display = 'none';
+  formSection.style.display = 'flex';
+  contactSection.style.display = 'none';
 }
 
 function displayContact() {
-  const listSection = document.querySelector("#book-display");
-  const formSection = document.querySelector("#book-form-section");
-  const contactSection = document.querySelector("#contact-section");
+  const listSection = document.querySelector('#book-display');
+  const formSection = document.querySelector('#book-form-section');
+  const contactSection = document.querySelector('#contact-section');
 
-  listSection.style.display = "none";
-  formSection.style.display = "none";
-  contactSection.style.display = "flex";
+  listSection.style.display = 'none';
+  formSection.style.display = 'none';
+  contactSection.style.display = 'flex';
 }
 
 const library = new Library();
@@ -91,6 +105,18 @@ const form = document.getElementById('book-data');
 form.addEventListener('submit', () => {
   library.addBooks(bookAuthor.value, bookTitle.value);
   form.submit();
+});
+
+homeSection.addEventListener('click', () => {
+  displayBookList();
+});
+
+bookFormSection.addEventListener('click', () => {
+  displayBookForm();
+});
+
+contactSectionObj.addEventListener('click', () => {
+  displayContact();
 });
 
 window.onload = () => {
