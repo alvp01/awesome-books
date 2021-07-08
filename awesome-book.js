@@ -1,11 +1,6 @@
-import { DateTime } from "luxon";
-
 const bookTitle = document.querySelector('#book-title');
 const bookAuthor = document.querySelector('#book-author');
 const bookListed = document.querySelector('.book-list');
-const now = DateTime.now().toString();
-const timeDisplay = document.createElement('p');
-timeDisplay.innerHTML = now;
 
 class Library {
   constructor() {
@@ -100,6 +95,5 @@ form.addEventListener('submit', () => {
 
 window.onload = () => {
   library.setBooks();
-  displayAll()
   library.displayBooks();
 };
