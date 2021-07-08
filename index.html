@@ -9,13 +9,15 @@
 </head>
 <body>
   <header>
-    <nav>
-      <ul>
-        <li><a href="#book-display" onclick="return displayBookList();">Home</a></li>
-        <li><a href="#book-form-section" onclick="return displayBookForm();">Add books</a></li>
-        <li><a href="#contact-section" onclick="return displayContact();">Contact</a></li>
-      </ul>
+    <nav class="navigation" id="navigation">
+        <ul class="navigation-links">
+          <li class="nav-li"><a href="#book-display" onclick="return displayBookList();">Home</a></li>
+          <li class="nav-li"><a href="#book-form-section" onclick="return displayBookForm();">Add books</a></li>
+          <li class="nav-li"><a href="#contact-section" onclick="return displayContact();">Contact</a></li>
+        </ul>
     </nav>
+
+
   </header>
    <div class="container flex-column">
     <h1 class="title-text">Awesome Book!</h1>
@@ -38,8 +40,35 @@
         <input class="btn" type="submit" value="submit">
       </form>
     </section>
-    <section class="row flex-row" id="contact-section">
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea, numquam itaque nesciunt, modi rem provident nobis ducimus molestias iste quo ex, necessitatibus porro minima sit dolore ratione est nulla omnis!</p>
+    <section class="row flex-row contact" id="contact-section">
+      <div class="row">
+      <h1 class="title-contact">Contact Information</h1>
+    </div>
+    <div class="row">
+      <p>Do you have any questions, Please do leave us a message and we would get back to you</p>
+    </div>
+    <div class="row">
+      <h4>Contact us via the following medium</h4>
+    </div>
+    <div class="row">
+      <ul>
+        <li><span>microversetransition@gmail.com</span></li>
+        <li><span>Our Phone number: +123844949494 </span></li>
+        <li><span>Address: Bolvard Avenue San Francisco</span></li>
+        👤 **Eri**
+
+          <br> - Github Username: @errea - github.com/errea
+          <br> -Twitter Username: @Erreakay - twitter.com/erreakezy
+          <br> - Linkedin Username: Eri Okereafor - www.linkedin.com/in/eri-ngozi-okereafor
+          
+          <br> 👤 **Abel**
+          
+          <br> - Github Username: @alvp01 - github.com/alvp01
+          <br> - Twitter Username: @alvp01 - twitter.com/alvp01
+          <br> - Linkedin Username: Abel Lavieri - www.linkedin.com/in/alvp01/ 
+          
+      </ul>
+    </div>
     </section>
   </div>
   <footer>
