@@ -1,6 +1,11 @@
+import { DateTime } from "luxon";
+
 const bookTitle = document.querySelector('#book-title');
 const bookAuthor = document.querySelector('#book-author');
 const bookListed = document.querySelector('.book-list');
+const now = DateTime.now().toString();
+const timeDisplay = document.createElement('p');
+timeDisplay.innerHTML = now;
 
 class Library {
   constructor() {
@@ -65,6 +70,26 @@ function displayBookList() {
   contactSection.style.display = "none";
 }
 
+function displayBookForm() {
+  const listSection = document.querySelector("#book-display");
+  const formSection = document.querySelector("#book-form-section");
+  const contactSection = document.querySelector("#contact-section");
+
+  listSection.style.display = "none";
+  formSection.style.display = "flex";
+  contactSection.style.display = "none";
+}
+
+function displayContact() {
+  const listSection = document.querySelector("#book-display");
+  const formSection = document.querySelector("#book-form-section");
+  const contactSection = document.querySelector("#contact-section");
+
+  listSection.style.display = "none";
+  formSection.style.display = "none";
+  contactSection.style.display = "flex";
+}
+
 const library = new Library();
 const form = document.getElementById('book-data');
 
@@ -75,5 +100,6 @@ form.addEventListener('submit', () => {
 
 window.onload = () => {
   library.setBooks();
+  displayAll()
   library.displayBooks();
 };
