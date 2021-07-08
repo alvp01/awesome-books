@@ -17,23 +17,26 @@ class Library {
 
   displayBooks() {
     bookListed.innerHTML = '';
+    let i = 0;
     this.books.map((book) => {
-      const li = document.createElement('li');
-      const div = document.createElement('div');
-      const title = document.createElement('p');
-      title.innerHTML = book.title;
-      const author = document.createElement('p');
-      author.innerHTML = book.author;
+      const div1 = document.createElement('div');
+      const p = document.createElement('p');
+      p.innerHTML = ` "${book.title}" by ${book.author}.`;
       const btn = document.createElement('button');
-      btn.innerHTML = 'REMOVE BOOK';
+      btn.innerHTML = 'Remove book';
       btn.addEventListener('click', () => {
         this.removeBooks(book);
       });
-      div.appendChild(title);
-      div.appendChild(author);
-      div.appendChild(btn);
-      li.appendChild(div);
-      bookListed.appendChild(li);
+      div1.appendChild(p);
+      div1.classList.add('flex-row');
+      btn.classList.add('remove-btn');
+      div1.appendChild(btn);
+      div1.classList.add('book-list-item');
+      if (i % 2 === 0) {
+        div1.classList.add('bg-2');
+      }
+      bookListed.appendChild(div1);
+      i += 1;
       return book;
     });
   }
