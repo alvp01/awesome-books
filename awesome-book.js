@@ -69,45 +69,15 @@ class Library {
   }
 }
 
-function displaySections(sectionsDisplay) {
+function displaySections(sectionDisplay) {
   const listSection = document.querySelector('#book-display');
   const formSection = document.querySelector('#book-form-section');
   const contactSection = document.querySelector('#contact-section');
 
-  listSection.style.display = sectionsDisplay[0];
-  formSection.style.display = sectionsDisplay[1];
-  contactSection.style.display = sectionsDisplay[2];
+  [listSection.style.display,
+    formSection.style.display,
+    contactSection.style.display] = sectionDisplay;
 }
-
-/* function displayBookList() {
-  const listSection = document.querySelector('#book-display');
-  const formSection = document.querySelector('#book-form-section');
-  const contactSection = document.querySelector('#contact-section');
-
-  listSection.style.display = 'flex';
-  formSection.style.display = 'none';
-  contactSection.style.display = 'none';
-}
-
-function displayBookForm() {
-  const listSection = document.querySelector('#book-display');
-  const formSection = document.querySelector('#book-form-section');
-  const contactSection = document.querySelector('#contact-section');
-
-  listSection.style.display = 'none';
-  formSection.style.display = 'flex';
-  contactSection.style.display = 'none';
-}
-
-function displayContact() {
-  const listSection = document.querySelector('#book-display');
-  const formSection = document.querySelector('#book-form-section');
-  const contactSection = document.querySelector('#contact-section');
-
-  listSection.style.display = 'none';
-  formSection.style.display = 'none';
-  contactSection.style.display = 'flex';
-} */
 
 const library = new Library();
 const form = document.getElementById('book-data');
@@ -118,15 +88,15 @@ form.addEventListener('submit', () => {
 });
 
 homeSection.addEventListener('click', () => {
-  displaySections(['flex','none','none']);
+  displaySections(['flex', 'none', 'none']);
 });
 
 bookFormSection.addEventListener('click', () => {
-  displaySections(['none','flex','none']);
+  displaySections(['none', 'flex', 'none']);
 });
 
 contactSectionObj.addEventListener('click', () => {
-  displaySections(['none','none','flex']);
+  displaySections(['none', 'none', 'flex']);
 });
 
 window.onload = () => {
