@@ -1,7 +1,7 @@
 /* eslint-disable */
 const { DateTime } = luxon;
 /* eslint-enable */
-const now = DateTime.now().toString();
+const now = DateTime.now().toLocaleString(DateTime.DATETIME_MED);
 const navDate = document.createElement('span');
 navDate.innerHTML = now;
 
