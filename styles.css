@@ -38,7 +38,6 @@ body {
   width: 100%;
   height: 70px;
   padding: 15px 0;
-  background-image: linear-gradient(-90deg, #fff, #eee);
   transition: all 0.8s;
   justify-content: center;
   align-items: flex-end;
