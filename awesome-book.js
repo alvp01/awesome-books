@@ -1,3 +1,17 @@
+/* eslint-disable */
+const { DateTime } = luxon;
+/* eslint-enable */
+const now = DateTime.now().toLocaleString(DateTime.DATETIME_MED);
+const navDate = document.createElement('span');
+navDate.innerHTML = now;
+
+const nav = document.querySelector('#navigation');
+nav.appendChild(navDate);
+
+const homeSection = document.querySelector('#home');
+const bookFormSection = document.querySelector('#add-books');
+const contactSectionObj = document.querySelector('#contact-link');
+
 const bookTitle = document.querySelector('#book-title');
 const bookAuthor = document.querySelector('#book-author');
 const bookListed = document.querySelector('.book-list');
@@ -55,12 +69,34 @@ class Library {
   }
 }
 
+function displaySections(sectionDisplay) {
+  const listSection = document.querySelector('#book-display');
+  const formSection = document.querySelector('#book-form-section');
+  const contactSection = document.querySelector('#contact-section');
+
+  [listSection.style.display,
+    formSection.style.display,
+    contactSection.style.display] = sectionDisplay;
+}
+
 const library = new Library();
 const form = document.getElementById('book-data');
 
 form.addEventListener('submit', () => {
   library.addBooks(bookAuthor.value, bookTitle.value);
   form.submit();
+});
+
+homeSection.addEventListener('click', () => {
+  displaySections(['flex', 'none', 'none']);
+});
+
+bookFormSection.addEventListener('click', () => {
+  displaySections(['none', 'flex', 'none']);
+});
+
+contactSectionObj.addEventListener('click', () => {
+  displaySections(['none', 'none', 'flex']);
 });
 
 window.onload = () => {

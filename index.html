@@ -8,14 +8,25 @@
   <title>Awesome Books</title>
 </head>
 <body>
+  <header>
+    <nav class="navigation flex-column" id="navigation">
+        <ul class="navigation-links">
+          <li class="nav-li"><a href="#book-display" id="home">Home</a></li>
+          <li class="nav-li"><a href="#book-form-section" id="add-books">Add books</a></li>
+          <li class="nav-li"><a href="#contact-section" id="contact-link">Contact</a></li>
+        </ul>
+    </nav>
+
+
+  </header>
    <div class="container flex-column">
     <h1 class="title-text">Awesome Book!</h1>
-    <section class="row flex-row">
+    <section class="row flex-row" id="book-display">
       <h2 class="title-text">Books!</h2>
       <div class="book-list">
       </div>
     </section>
-    <section class="row flex-row">
+    <section class="row flex-row" id="book-form-section">
       <h3 class="title-text">Add books!</h3>
       <form name="book-data" id="book-data" class="book-registration flex-column">
         <div class="input-field flex-row">
@@ -29,7 +40,28 @@
         <input class="btn" type="submit" value="submit">
       </form>
     </section>
+    <section class="row flex-row contact" id="contact-section">
+      <div class="row">
+      <h1 class="title-contact">Contact Information</h1>
+    </div>
+    <div class="row">
+      <p>Do you have any questions, Please do leave us a message and we would get back to you</p>
+    </div>
+    <div class="row">
+      <h4>Contact us via the following medium</h4>
+    </div>
+    <div class="row">
+      <ul>
+        <li><span>email@ouremail.com</span></li>
+        <li><span>Our Phone number: +123844949494 </span></li>
+        <li><span>Address: Bolvard Avenue San Francisco</span></li>  
+      </ul>
+    </div>
+    </section>
   </div>
-  <script src="awesome-book.js"></script>
+  <footer>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@1.27.0/build/global/luxon.min.js"></script>
+    <script src="awesome-book.js"></script>
+  </footer>
 </body> 
 </html>

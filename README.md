@@ -59,6 +59,10 @@ Open `http://localhost:3000/` in your browser.
 
 </details>
 
+## Live link
+
+[Awesome books project](https://alvp01.github.io/awesome-books/)
+
 
 ## ✒️  Authors <a name = "author"></a>
 
