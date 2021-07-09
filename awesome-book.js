@@ -69,7 +69,17 @@ class Library {
   }
 }
 
-function displayBookList() {
+function displaySections(sectionsDisplay) {
+  const listSection = document.querySelector('#book-display');
+  const formSection = document.querySelector('#book-form-section');
+  const contactSection = document.querySelector('#contact-section');
+
+  listSection.style.display = sectionsDisplay[0];
+  formSection.style.display = sectionsDisplay[1];
+  contactSection.style.display = sectionsDisplay[2];
+}
+
+/* function displayBookList() {
   const listSection = document.querySelector('#book-display');
   const formSection = document.querySelector('#book-form-section');
   const contactSection = document.querySelector('#contact-section');
@@ -97,7 +107,7 @@ function displayContact() {
   listSection.style.display = 'none';
   formSection.style.display = 'none';
   contactSection.style.display = 'flex';
-}
+} */
 
 const library = new Library();
 const form = document.getElementById('book-data');
@@ -108,15 +118,15 @@ form.addEventListener('submit', () => {
 });
 
 homeSection.addEventListener('click', () => {
-  displayBookList();
+  displaySections(['flex','none','none']);
 });
 
 bookFormSection.addEventListener('click', () => {
-  displayBookForm();
+  displaySections(['none','flex','none']);
 });
 
 contactSectionObj.addEventListener('click', () => {
-  displayContact();
+  displaySections(['none','none','flex']);
 });
 
 window.onload = () => {
